@@ -47,6 +47,7 @@ namespace Profiles.About.Modules.About
                 case "overview":
                     
                     tabs += Tabs.DrawActiveTab("Overview");
+                    tabs += Tabs.DrawDisabledTab("Palmetto Profiles", Root.Domain+"/about/default.aspx?tab=musc");
                     tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
                     tabs += Tabs.DrawDisabledTab("Sharing Data", Root.Domain + "/about/default.aspx?tab=data");
                     tabs += Tabs.DrawDisabledTab("ORCID", Root.Domain + "/about/default.aspx?tab=orcid");
@@ -57,6 +58,7 @@ namespace Profiles.About.Modules.About
 
                 case "faq":
                     tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
+                    tabs += Tabs.DrawDisabledTab("Palmetto Profiles", Root.Domain+"/about/default.aspx?tab=musc");
                     tabs += Tabs.DrawActiveTab("Frequently Asked Questions");
                     tabs += Tabs.DrawDisabledTab("Sharing Data", Root.Domain + "/about/default.aspx?tab=data");
                     tabs += Tabs.DrawDisabledTab("ORCID", Root.Domain + "/about/default.aspx?tab=orcid");
@@ -67,6 +69,7 @@ namespace Profiles.About.Modules.About
 
                 case "data":
                     tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
+                     tabs += Tabs.DrawDisabledTab("Palmetto Profiles", Root.Domain+"/about/default.aspx?tab=musc");
                     tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
                     tabs += Tabs.DrawActiveTab("Sharing Data");
                     tabs += Tabs.DrawDisabledTab("ORCID", Root.Domain + "/about/default.aspx?tab=orcid");
@@ -75,6 +78,7 @@ namespace Profiles.About.Modules.About
                     break;
                 case "orcid":
                     tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
+                     tabs += Tabs.DrawDisabledTab("Palmetto Profiles", Root.Domain+"/about/default.aspx?tab=musc");
                     tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
                     tabs += Tabs.DrawDisabledTab("Sharing Data", Root.Domain + "/about/default.aspx?tab=data");
                     tabs += Tabs.DrawActiveTab("ORCID");
@@ -82,6 +86,15 @@ namespace Profiles.About.Modules.About
                     pnlORCID.Visible = true;
                     break;
 
+                case "musc":
+                    tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
+                    tabs += Tabs.DrawActiveTab("Palmetto Profiles");
+                    tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
+                    tabs += Tabs.DrawDisabledTab("Sharing Data", Root.Domain + "/about/default.aspx?tab=data");
+                    tabs += Tabs.DrawDisabledTab("ORCID", Root.Domain + "/about/default.aspx?tab=orcid");
+
+                    pnlMusc.Visible = true;
+                    break;
 
             }
 
