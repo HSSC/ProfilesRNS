@@ -117,8 +117,7 @@
                 <tbody align="left">
                     <tr>
                         <td colspan='3'>
-                            <div style="font-size: 18px; color: #b23f45; font-weight: bold; margin-bottom: 3px;">
-                                Find people by keyword</div>
+                            <div class="sectionHdr">Find people by keyword</div>
                         </td>
                     </tr>
                     <tr>
@@ -156,8 +155,7 @@
             <table width="100%">
                 <tr>
                     <td colspan='3'>
-                        <div style="font-size: 18px; color: #b23f45; font-weight: bold; margin-bottom: 3px;">
-                            Find people by name/organization</div>
+                        <div class="sectionHdr">Find people by name/organization</div>
                     </td>
                 </tr>
                 <tr>
@@ -210,12 +208,14 @@
                                         All <b>except</b> the one selected
                                     </td>
                                 </tr>
-                                <tr runat="server" id="trFacultyType">
+
+<!--
+                                <tr runat="server" id="trFacultyType" style="border: thin solid red;">
                                     <th>
-                                        Faculty Type
+                                        Faculty Type(TAMI)
                                     </th>
                                     <td style="padding:0" colspan="2">
-                                        <table cellpadding="0" style="padding:0">
+                                        <table cellpadding="0" style="padding:0" style="border: thin solid green;">
                                             <tr>
                                                 <td>
                                                     <asp:PlaceHolder ID="phDDLCHK" runat="server"></asp:PlaceHolder>
@@ -256,6 +256,8 @@
                                         </table>
                                     </td>
                                 </tr>
+-->
+				
                                 <tr>
                                     <th>
                                     </th>

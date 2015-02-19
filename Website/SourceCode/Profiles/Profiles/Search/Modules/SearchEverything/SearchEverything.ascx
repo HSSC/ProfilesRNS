@@ -30,9 +30,7 @@ Search or browse for people, publications, concepts, and other items in Profiles
             <table width="100%">
                 <tr>
                     <td colspan='3'>
-                        <div style="font-size: 18px; color: #b23f45; font-weight: bold; margin-bottom: 3px;">
-                            Search by keywords
-                        </div>
+                        <div class="sectionHdr">Search by keywords</div>
                     </td>
                 </tr>
                 <tr>

@@ -5,6 +5,8 @@ input.ctsc-SearchBoxInput
 }
 
 /* Catalyst searchbox button (Framework/Template.Master) - Move button image down a couple of pixels in ie */
+img { border: none; }
+
 img.gwt-Image
 {
 	margin-top: 4px !important;					

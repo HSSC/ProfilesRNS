@@ -28,11 +28,90 @@ namespace Profiles.Login.Modules.Login
     public partial class Login : System.Web.UI.UserControl
     {
         Framework.Utilities.SessionManagement sm;
+        
+        protected Boolean doLogin(string u, string pw) {
+        	Profiles.Login.Utilities.DataIO data = new Profiles.Login.Utilities.DataIO();
+        	Profiles.Login.Utilities.User user = new Profiles.Login.Utilities.User();
+        	
+        	user.UserName = u;
+        	user.Password = pw;
+        	
+        	if(data.UserLogin(ref user)) {
+        		//emit log message with username date and time and userid(?)
+        		
+        		
+        		Framework.Utilities.DebugLogging.AlwaysLog("login "
+                	                                     + u + " " + user.UserName
+                	                                     + " " 
+                	                                     + sm.Session().UserID
+        			+ " "
+        			+ DateTime.Now.ToLongDateString()
+        			+ " TIME: " 
+        			+ DateTime.Now.ToLongTimeString() 
+        		);
+                Framework.Utilities.DebugLogging.Log("loggedin !!! "
+                	                                     + u + " " + user.UserName
+                	                                     + " " 
+                	                                     + sm.Session().UserID);
+        		
+        		
+        		sm.Session().UserName = u;
+        		
+        		
+        		Framework.Utilities.Cache.AlterDependency(sm.Session().SessionID);
+        		if(Request.QueryString["edit"] == "true")
+        			Response.Redirect(Root.Domain + "/edit/" + sm.Session().NodeID.ToString());
+        		else
+        			Response.Redirect(Root.Domain + "/search");
+        		return true;
+        	} else {
+        		//log failure message, maybe show a message to the user
+        		Response.Redirect(Root.Domain + "/about");
+        		return false;
+        	}
+        	return false;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
+            	String eppn = Request.Headers["eppn"];
+            	//Framework.Utilities.DebugLogging.AlwaysLog("login page: eppn: " + eppn);
+            	
+            	if ( Request.QueryString == null || Request.QueryString.Count == 0) {
+  
+            		if(!String.IsNullOrEmpty(eppn)) {
+            			if ( doLogin(eppn,eppn) ) {
+            					Framework.Utilities.DebugLogging.AlwaysLog("suceeded login: eppn: " + eppn
+        							+ " "  + DateTime.Now.ToLongDateString()
+        			+ " TIME: " 
+        			+ DateTime.Now.ToLongTimeString() 
+        		);
+            					
+            					
+            					
+            			} else {
+            					Framework.Utilities.DebugLogging.AlwaysLog("failed to login: eppn: " + eppn
+            				                                          
+            				       	+ " "
+        			+ DateTime.Now.ToLongDateString()
+        			+ " TIME: " 
+        			+ DateTime.Now.ToLongTimeString() 
+        		);                                   
+            				                                         
+            			}
+            		} else {
+            			Framework.Utilities.DebugLogging.AlwaysLog("login page, no user id. going to search.");
+  	         		Framework.Utilities.DebugLogging.Log("login page, no user id. going to search.");
+            		 Response.Redirect(Root.Domain + "/search");
+            		}
+            	} else
+            	
+            	
+            	
+            	
+            	
+            	
 
                 if (Request.QueryString["method"].ToString() == "logout")
                 {
@@ -78,6 +157,21 @@ namespace Profiles.Login.Modules.Login
 
                 if (data.UserLogin(ref user))
                 {
+                	
+                		Framework.Utilities.DebugLogging.AlwaysLog("CMDLCIK: login "
+                	                                     + " " + user.UserName
+                	                                     + " " 
+                	                                     + sm.Session().UserID
+        			+ " "
+        			+ DateTime.Now.ToLongDateString()
+        			+ " TIME: " 
+        			+ DateTime.Now.ToLongTimeString() 
+        		);
+                	
+                	
+                	
+                	
+                	
                     Framework.Utilities.Cache.AlterDependency(sm.Session().SessionID);
                     if (Request.QueryString["edit"] == "true")
                         if (Request.QueryString["editparams"] == null)

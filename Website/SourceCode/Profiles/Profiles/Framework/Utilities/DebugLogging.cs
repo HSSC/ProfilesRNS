@@ -10,8 +10,25 @@ namespace Profiles.Framework.Utilities
 {
     public static class DebugLogging
     {
-
-
+    	public static String getLogPath() {
+    		return AppDomain.CurrentDomain.BaseDirectory + "/ccdebug.txt";
+    	}
+    	public static String getAlwaysLogPath() {
+    		return AppDomain.CurrentDomain.BaseDirectory + "/logins.txt";
+    	}
+    	
+    	public static void AlwaysLog(string msg){
+    		try {
+    			string path = getAlwaysLogPath();
+    			using (StreamWriter w = File.AppendText(path)) {
+    				w.WriteLine("\t" + msg.Trim() + " " + DateTime.Now.ToLongDateString() + " " + DateTime.Now.ToLongTimeString());
+    				w.Close();
+    			}
+    		} catch (Exception ex) {
+    			Trace.TraceWarning("AlwaysLog Exception: " + ex);
+    			Trace.TraceWarning("msg " + msg.Trim());
+    		}
+    	}
 
         public static void Log(string msg)
         {
@@ -23,8 +40,9 @@ namespace Profiles.Framework.Utilities
 
                 if (Convert.ToBoolean(ConfigurationSettings.AppSettings["DEBUG"]) == true)
                 {
-                    if (ConfigurationSettings.AppSettings["DEBUG_PATH"] != null)
-                    {
+                	path = getLogPath();
+                   // if (ConfigurationSettings.AppSettings["DEBUG_PATH"] != null)
+                    //{
                         path = ConfigurationSettings.AppSettings["DEBUG_PATH"];
 
                         using (StreamWriter w = File.AppendText(path))
@@ -33,14 +51,16 @@ namespace Profiles.Framework.Utilities
                             w.WriteLine("\t" + msg.Trim() + " " + DateTime.Now.ToLongTimeString());
                             w.Close();
                         }
-                    }
+                    //}
 
                 }
             }
             catch (Exception ex)
             {
-
+				Trace.TraceWarning("Log Exception: " + ex);
+            	Trace.TraceWarning("the message was " + msg.Trim());
             }
+            
 
         }
         public static void Log(string msg, RDFTriple triple)

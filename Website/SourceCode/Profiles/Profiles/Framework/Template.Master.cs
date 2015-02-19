@@ -71,9 +71,17 @@ namespace Profiles.Framework
 
 
                 this.BindRepeaterToPanel(ref rptHeader, GetPanelByType("header"));
-                this.BindRepeaterToPanel(ref rptActive, GetPanelByType("active"));
+                try {
+                	this.BindRepeaterToPanel(ref rptActive, GetPanelByType("active"));
+                } catch (Exception ex) {
+                	Framework.Utilities.DebugLogging.Log(ex.Message + " ++ TemplateMaster.cs:77 " + ex.StackTrace);
+                }
+                
                 this.BindRepeaterToPanel(ref rptPage, GetPanelByType("page"));
-                this.BindRepeaterToPanel(ref rptMain, GetPanelByType("main"));
+                
+                if (GetPanelByType("main") != null) 
+                	this.BindRepeaterToPanel(ref rptMain, GetPanelByType("main"));
+                
                 this.BindRepeaterToPanel(ref rptPassive, GetPanelByType("passive"));
                 this.BindRepeaterToPanel(ref rptFooter, GetPanelByType("footer"));
 
@@ -506,10 +514,13 @@ namespace Profiles.Framework
                     }
                 }
             }
-            catch (Exception ex) { Framework.Utilities.DebugLogging.Log(ex.Message + " ++ " + ex.StackTrace); }
+            catch (Exception ex) { Framework.Utilities.DebugLogging.Log(ex.Message + " TemplaetMaster:512 ++ " + ex.StackTrace); }
 
+            try {
             repeater.DataSource = rtnpanel.Modules;
             repeater.DataBind();
+            } catch (Exception ex) { 
+            	Framework.Utilities.DebugLogging.Log(ex.Message + " TemplateMaster:517 ++ " + ex.StackTrace); }
         }
 
         #endregion

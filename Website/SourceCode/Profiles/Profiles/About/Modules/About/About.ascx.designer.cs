@@ -92,5 +92,15 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlORCID;
+        
+        
+        /// <summary>
+        /// pnlMusc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlMusc;
     }
 }

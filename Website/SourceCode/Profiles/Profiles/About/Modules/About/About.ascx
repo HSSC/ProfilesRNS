@@ -306,4 +306,58 @@
             be adding integration to Web of Knowledge from within ORCID soon.</p>      
       
     </asp:Panel>
+    
+    
+    
+    
+      <asp:Panel runat="server" ID="pnlMusc" Visible="false">
+		<h3>About Palmetto Profiles at Health Sciences South Carolina (HSSC)</h3>
+		<p>Palmetto Profiles enables the discovery of research expertise within the Health Sciences South Carolina (HSSC) 
+		consortium and at its member institutions including Medical University of South Carolina (MUSC), Clemson University, University of South Carolina (USC), Greenville Hospital System University Medical Center (GHS), Palmetto Health and Spartanburg Regional Healthcare System, allowing for new ways to network and collaborate between researchers, between mentors and mentees, between research 
+		community and industry partners, and much more.</p>
+		<p>Whether you are a faculty, a trainee, staff, affiliate organization member, community partner, industry partner, or 
+		other member of the HSSC ecosystem, we encourage you to get in touch with us at about your ideas on how to improve this 
+		application. We especially look forward to hearing from you if the system has enabled your research in any way. 
+		Your success stories allow us to continue to build on these types of tools and to continue to get consortium leadership support.
+		</p>
+		<h3>Information about the Tool</h3>
+
+		<p>Learn more about the Profiles tool, improving your research profile and explore Frequently Asked Questions.</p>
+		<h3>Our Collaborators and Vision</h3>
+	
+		<p>Palmetto Profiles is HSSC's version of the ground-breaking, open source, research networking software 
+		product "Profiles", developed by Harvard Catalyst, Harvard's CTSA-funded organization and supported by 
+		Recombinant Data Corp (www.recomdata.com). As a member of the Profiles family, we are part of a growing community
+		of research institutions using the open source product. In addition, HSSC continues to collaborate closely
+		with the other deployment sites to significantly contribute to the growth and further development of Profiles.
+		For detailed acknowledgements, see below.</p>
+
+	<p>This work is also part of a national effort, enabled by the NCRR-facilitated CTSA National Consortium to 
+	ensure interoperability of research networking products across universities and to share our learning with 
+	our colleagues across the nation.</p>
+	<h3>Sponsors:</h3>
+<p>
+This project was supported by the South Carolina Clinical &amp; Translational Research (SCTR) Institute, 
+with an academic home at the Medical University of South Carolina, NIH/NCRR CTSA Grant number UL1 RR029882 and
+Health Sciences South Carolina (HSSC), supported by The Duke Endowment.
+</p>
+
+<h3>Contributors &amp; Thanks!</h3>
+
+<p>At HSSC:</p>
+<ul><li>Dr. Jihad Obeid, M.D., Katrina Fryar, and the BioMedical Informatics Center.</li></ul>
+
+<p>At MUSC:</p>
+<ul><li>Loretta Lynch</li></ul>
+
+<p></p>
+
+<h3>Acknowledgements:</h3>
+
+<p>
+This service is made possible by the Profiles Research Networking Software developed under the supervision of Griffin M Weber, MD, PhD, with support from Grant Number
+1 UL1 TR001102-01 to Harvard Catalyst: The Harvard Clinical and Translational Science Center from the National Center for Research Resources and support from Harvard University and its affiliated academic healthcare centers.
+</p>
+ 
+    </asp:Panel>
 </div>

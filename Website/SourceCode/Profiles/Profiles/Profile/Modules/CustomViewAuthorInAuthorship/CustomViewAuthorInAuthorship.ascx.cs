@@ -35,7 +35,9 @@ namespace Profiles.Profile.Modules
         private void DrawProfilesModule()
         {
 
-
+  			string shibboleth = ConfigurationSettings.AppSettings["SHIBBOLETH"];
+  			Boolean showShibboleth = !String.IsNullOrEmpty(shibboleth);
+  			 
             DateTime d = DateTime.Now;
             Profiles.Profile.Utilities.DataIO data = new Profiles.Profile.Utilities.DataIO();
             List<Publication> publication = new List<Publication>();
@@ -68,6 +70,9 @@ namespace Profiles.Profile.Modules
 
 
 		   // Login link
+		   if (showShibboleth)
+		   	  loginLiteral.Text = String.Format("<a href='{0}'>login</a>", Root.Domain + "/login");
+		   else
 		  loginLiteral.Text = String.Format("<a href='{0}'>login</a>", Root.Domain + "/login/default.aspx?pin=send&method=login&edit=true");
 
           Framework.Utilities.DebugLogging.Log("PUBLICATION MODULE end Milliseconds:" + (DateTime.Now - d).TotalSeconds);

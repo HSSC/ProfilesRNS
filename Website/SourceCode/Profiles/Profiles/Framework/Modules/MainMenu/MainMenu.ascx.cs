@@ -12,6 +12,7 @@
 */
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -48,12 +49,28 @@ namespace Profiles.Framework.Modules.MainMenu
         private void DrawProfilesModule()
         {
             Int64 subject = 0;
+            string testLogin = ConfigurationSettings.AppSettings["TEST_LOGIN"];
+            string shibboleth = ConfigurationSettings.AppSettings["SHIBBOLETH"];
+            Boolean showTestLogin = !String.IsNullOrEmpty(testLogin);
+            Boolean showShibboleth = !String.IsNullOrEmpty(shibboleth);
 
             if (Request.QueryString["subject"] != null)
                 subject = Convert.ToInt64(Request.QueryString["subject"]);
 
             Utilities.DataIO data = new Profiles.Framework.Utilities.DataIO();
             menulist.Append("<ul>");
+            if(sm.Session().UserID > 0) {
+            	if(!String.IsNullOrEmpty(sm.Session().UserName)) {
+            		menulist.Append("<li>User: <b>" + sm.Session().UserName+"</b></li>");
+            	}
+            } else {
+            	if(showShibboleth) {
+            		menulist.Append("<li><a href='" + Root.Domain + "/login'>Login</a></li>");
+            	} else {
+            		menulist.Append("<li><a href='" + Root.Domain + "/login/default.aspx?pin=send&method=login&redirectto=" +
+            		                Root.Domain + Root.AbsolutePath + "'>Login</a></li>");
+            	}
+            }
 
             menulist.Append("<li><a href='" + Root.Domain + "/search'>Find People</a></li>");
             menulist.Append("<li><a href='" + Root.Domain + "/search/all'>Find Everything</a></li>");
