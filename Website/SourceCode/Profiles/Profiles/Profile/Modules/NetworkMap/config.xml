@@ -1,26 +1,82 @@
 ﻿<mapconfig>
   <Zoom>
-    <CenterLat>42.354637</CenterLat>
-    <CenterLong>-71.089168</CenterLong>
-    <ZoomLevel>7</ZoomLevel>
-    <Label>New England</Label>
-    <SortOrder>1</SortOrder>
+    <CenterLat>32.7853</CenterLat>
+    <CenterLong>-79.9526</CenterLong>
+    <ZoomLevel>16</ZoomLevel>
+    <Label>55 Bee St</Label>
+    <SortOrder>8</SortOrder>
     <DefaultLevel></DefaultLevel>
   </Zoom>  
+
+
   <Zoom>
-    <CenterLat>42.337526</CenterLat>
-    <CenterLong>-71.089168</CenterLong>
-    <ZoomLevel>13</ZoomLevel>
-    <Label>Boston</Label>
-    <SortOrder>2</SortOrder>
+    <CenterLat>33.8191</CenterLat>
+    <CenterLong>-80.9006</CenterLong>
+    <ZoomLevel>7</ZoomLevel>
+    <Label>South Carolina</Label>
+    <SortOrder>1</SortOrder>
     <DefaultLevel>True</DefaultLevel>
   </Zoom>  
+
+
   <Zoom>
-    <CenterLat>42.337526</CenterLat>
-    <CenterLong>-71.104536</CenterLong>
-    <ZoomLevel>16</ZoomLevel>
-    <Label>Longwood</Label>
+    <CenterLat>34.0005556</CenterLat>
+    <CenterLong>-81.035</CenterLong>
+    <ZoomLevel>10</ZoomLevel>
+    <Label>Route 26</Label>
+    <SortOrder>2</SortOrder>
+    <DefaultLevel></DefaultLevel>
+  </Zoom>  
+
+  <Zoom>
+    <CenterLat>34.0005556</CenterLat>
+    <CenterLong>-81.035</CenterLong>
+    <ZoomLevel>13</ZoomLevel>
+    <Label>Columbia</Label>
     <SortOrder>3</SortOrder>
     <DefaultLevel></DefaultLevel>
   </Zoom>
+
+
+  <Zoom>
+    <CenterLat>32.7763889</CenterLat>
+    <CenterLong>-79.9311111</CenterLong>
+    <ZoomLevel>11</ZoomLevel>
+    <Label>Charleston</Label>
+    <SortOrder>4</SortOrder>
+    <DefaultLevel></DefaultLevel>
+  </Zoom>
+
+
+  <Zoom>
+    <CenterLat>34.6833333</CenterLat>
+    <CenterLong>-82.8375</CenterLong>
+    <ZoomLevel>11</ZoomLevel>
+    <Label>Clemson</Label>
+    <SortOrder>5</SortOrder>
+    <DefaultLevel></DefaultLevel>
+  </Zoom>
+
+
+  <Zoom>
+    <CenterLat>34.8525</CenterLat>
+    <CenterLong>-82.3941667</CenterLong>
+    <ZoomLevel>14</ZoomLevel>
+    <Label>Greenville</Label>
+    <SortOrder>6</SortOrder>
+    <DefaultLevel></DefaultLevel>
+  </Zoom>
+
+
+  <Zoom>
+    <CenterLat>34.9494444</CenterLat>
+    <CenterLong>-81.9322222</CenterLong>
+    <ZoomLevel>15</ZoomLevel>
+    <Label>Spartanburg</Label>
+    <SortOrder>7</SortOrder>
+    <DefaultLevel></DefaultLevel>
+  </Zoom>
+
+
+
 </mapconfig>
